@@ -9,15 +9,15 @@ response.content
 
 soup = BeautifulSoup(response.content,'lxml')
 
-tage = soup.select('.tit-g a') 
+tags = soup.select('.tit-g a') 
 
-len(tage)
-tage[0].text.strip()
+len(tags)
+tags[0].text.strip()
 
-for i, tag in enumerate(tage):
+for i, tag in enumerate(tags):
     title = tag.text.strip()
     link = tag.get('href').strip()  
-    print(f"{i + 1}. {title}")
-    print(f"   링크: {link}")
+    print(f"{i}. {title}")
+    print(f"링크: {link}")
     print("=" * 50)
 
